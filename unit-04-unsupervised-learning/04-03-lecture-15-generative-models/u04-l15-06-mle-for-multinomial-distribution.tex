@@ -1,0 +1,68 @@
+% Created 2020-05-06 mié 14:01
+% Intended LaTeX compiler: pdflatex
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{float, amsfonts, commath, mathtools}
+\author{Tabaré Pérez}
+\date{\today}
+\title{Lecture 15 - 6: MLE for Multinomial Distribution}
+\hypersetup{
+ pdfauthor={Tabaré Pérez},
+ pdftitle={Lecture 15 - 6: MLE for Multinomial Distribution},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.3.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+So now the question, you remember when we started talking to you about it, I
+tell you, let's make an assumption that our \(\mathcal{W}\) has just two words
+in it. And the reason I did it was because when I did this assumption, actually,
+I am estimating one single \(\theta_0\) because \(\theta_1\) can be expressed in
+terms of this \(\theta_0\).
+
+If I want to work with vocabulary of any length, then I would have many of these
+different \(\theta\)s . And in this case, you can do exactly the same story, but
+you need to use the Lagrange multipliers to find the corresponding \(\theta\)s.
+
+If you do both of these computation, you will get an expression which is very
+similar to this one and I will just write here this expression:
+
+\begin{equation}
+\hat{\theta}=\frac{\text{count}(w)}{\sum_{w^\prime \in \mathcal{W}} \text{count}(w^\prime)}
+\end{equation}
+
+So \(\theta\) for the word \(w\) would be the count of this word \(w\) divided
+by the count of all the words in the document.
+
+So again, the expression itself will be exactly the same expression. It's just
+derivation that is a tiny bit more complex.
+
+So at this point, what we've seen so far, I described to you how given some
+training data, we can take this training data and estimate these \(\theta\)s,
+the parameters of the multinomial, to find a multinomial which fit this data the
+best. And again, I remember you, that we have only a single document.
+
+In reality, you can assume that even if you have a collection of documents, the
+whole story is exactly the same because whenever we're making our assumption
+that we are generating the words, these words are generated independently. So
+pretty much, you can do exactly the same formula by concatenating many of your
+documents into a single document and then repeating the same story.
+
+So now we're done with the discussion of estimation for multinomial. And with
+that, we are ready to start talking about how can we use these multinomials to
+actually do prediction.
+\end{document}
